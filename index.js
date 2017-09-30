@@ -1,3 +1,20 @@
+var express = require('express');
+var bodyParser = require('body-parser');
+var app = express();
+app.use( bodyParser.json() );       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+})); 
+
+var port = process.env.PORT || 3000;
+
+app.get('/', function(req, res){
+   res.write('hello node js in heroku');
+   console.log('Get request received ');
+   res.status(200);
+   res.end();
+});
+
 var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://localhost:27017/StoreDailyTask";
 var dateFormat = require('dateformat');
@@ -80,6 +97,9 @@ function SendToComputer(){
      console.log("publish done");
  } 
 
+var server = app.listen(port,function () {
+  console.log("Example app listening ")
+});
 
 /*MongoClient.connect(url, function(err, db) {
   if (err) throw err;
