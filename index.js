@@ -16,7 +16,7 @@ app.get('/', function(req, res){
 });
 
 var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://localhost:27017/StoreDailyTask";
+var url = "mongodb://Krishna123:vkrishna123@ds157624.mlab.com:57624/storedailytask";
 var dateFormat = require('dateformat');
 var now;
 
@@ -95,7 +95,7 @@ function SendToComputer(){
      } 
    }   
      console.log("publish done");
- } 
+ }  //To connect using the mongo shell: 
 
 var server = app.listen(port,function () {
   console.log("Example app listening ")
