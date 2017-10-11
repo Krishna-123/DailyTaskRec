@@ -25,7 +25,7 @@ function separateMess(FMess){
   dMess = FMess.split("_");
    FirstMess++; 
    if (FirstMess === 1) {
-    console.log(dMess[0]); 
+    console.log("filename is: " + dMess[0]); 
    fs.writeFile(dMess[0], dMess[0]+"\nHello V.krishnaAgarwal\nHere is your Today Messages Thank You for using us!!\n\n");
    };
    WriteFile(dMess[0], dMess[1]);
